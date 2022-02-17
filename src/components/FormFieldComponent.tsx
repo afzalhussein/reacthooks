@@ -8,7 +8,7 @@ const FormField = (props: {
   changeHandler: ChangeEventHandler;
 }): JSX.Element => {
   return (
-    <>
+    <div data-testid="formField">
       <Label label={props.label} />
       <Input
         data-testid="formfield_input"
@@ -16,7 +16,7 @@ const FormField = (props: {
         onchangeHandler={props.changeHandler}
         inputValue={"type here"}
       />
-    </>
+    </div>
   );
 };
 
