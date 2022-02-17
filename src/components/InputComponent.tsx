@@ -1,6 +1,11 @@
 import React, { ChangeEventHandler } from "react";
 
-const Input = (props: {labelText: string, onchangeHandler:ChangeEventHandler, inputValue:string}) => {
+
+const Input = (props: {
+  labelText: string;
+  onchangeHandler: ChangeEventHandler;
+  inputValue: string;
+}) => {
   return (
     <input
       type="text"
