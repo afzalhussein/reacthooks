@@ -13,7 +13,11 @@ describe("configurations", () => {
   test("should app contain comments", () => {
     expect(configurations.app.comments).toBeDefined();
   });
-  test("should connect using base_url and app posts", () => {
-    expect(connectService().connectTo(configurations.app.posts)).toBeDefined();
+  test("should connect with fetchTo using base_url and app posts", () => {
+    expect(connectService().fetchTo(configurations.app.posts)).toBeDefined();
   });
+  test("should connect with axiosTo using base_url and app posts", () => {
+    expect(connectService().axiosTo(configurations.app.posts)).toBeDefined();
+  });
+
 });

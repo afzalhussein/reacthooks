@@ -4,6 +4,7 @@ import "./App.css";
 import Label from "./components/LabelComponent";
 import FormField from "./components/FormFieldComponent";
 import connectService from "./service/connector";
+import Post from "./service/Post";
 
 function App() {
   const [customerName, setCustomerName] = useState("");
@@ -12,15 +13,9 @@ function App() {
     setCustomerName(event.target.value);
   };
 
-  interface Post {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-  }
   useEffect(function () {
     const getPosts = async () => {
-      setPosts(await connectService().connectTo("posts"));
+      setPosts(await connectService().axiosTo("posts"));
     };
     getPosts();
   }, []);
@@ -29,11 +24,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 data-testid="hooks">React Hooks: Use Effect</h1>
-        <ol>
-          {posts?.map((post: Post) => (
-            <li key={post.id} className="post">{post?.title}</li>
-          ))}
-        </ol>
+        {PostsList(posts)}
         <FormField
           label="Enter customer name"
           labelText="customer name"
@@ -46,3 +37,14 @@ function App() {
 }
 
 export default App;
+function PostsList(posts: never[]) {
+  return <ol className="posts-container">
+    {posts?.map((post: Post) => (
+      <li key={post.id} className="post-card">
+        <div>{post?.title}</div>
+        <div className="post-card-body">{post.body}</div>
+      </li>
+    ))}
+  </ol>;
+}
+
