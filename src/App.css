@@ -1,0 +1,97 @@
+:root {
+  --post-card-background-color: #001c24;
+  --post-card-border-color: rgb(248, 234, 171);
+  --post-card-border: 1px solid var(--post-card-border-color);
+  --post-card-height: 100px;
+  --background-color: rgb(63, 63, 63);
+  --container-size: 800px;
+  --post-card-width: 250px;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.post-card {
+  margin: 0;
+  position: relative;
+  text-align: justify;
+  float: left;
+  font-size: medium;
+  width: var(--post-card-width, 250px);
+  height: var(--post-card-height, auto);
+  padding: 3px;
+  margin: 5px 3px;
+  list-style: none;
+  border: var(--post-card-border);
+  border-radius: 5px;
+  background-color: var(--post-card-background-color);
+  border-right-style: double;
+  border-bottom-style: hidden;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+}
+
+.posts-container {
+  padding: 5px 0 0 5px;
+  border: 0 solid transparent;
+  border-radius: 15px;
+  align-items: center;
+  list-style-type: hidden;
+  max-width: var(--container-size, 1000px);
+  min-width: var(--post-card-width);
+  background-color: var(--background-color, red);
+}
+
+.post-card-body {
+  color: darkgray;
+  padding: 0;
+  margin: 2px 2px;
+  overflow: auto;
+  font-size: smaller;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 black;
+}
+
+.post-card-body::first-letter {
+  font-weight: bold;
+  font-size: x-large;
+}
