@@ -38,13 +38,14 @@ function App() {
 
 export default App;
 function PostsList(posts: never[]) {
-  return <ol className="posts-container">
-    {posts?.map((post: Post) => (
-      <li key={post.id} className="post-card">
-        <div>{post?.title}</div>
-        <div className="post-card-body">{post.body}</div>
-      </li>
-    ))}
-  </ol>;
+  return (
+    <ol className="posts-container">
+      {posts?.map((post: Post) => (
+        <li key={post.id} className="post-card">
+          <div>{post?.title}</div>
+          <div className="post-card-body">{post.body}</div>
+        </li>
+      ))}
+    </ol>
+  );
 }
-

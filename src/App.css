@@ -43,30 +43,32 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .post-card {
-    margin: 0;
-    position: relative;
-    text-align: justify;
-    float: left;
-    font-size: medium;
-    width: var(--post-card-width,250px);
-    height: var(--post-card-height, auto);
-    padding: 3px;
-    margin: 5px 3px;
-    list-style: none;
-    border: var(--post-card-border);
-    border-radius: 5px;
-    background-color: var(--post-card-background-color);
-    border-right-style: double;
-    border-bottom-style: hidden;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    overflow: hidden;
-  }
+  margin: 0;
+  position: relative;
+  text-align: justify;
+  float: left;
+  font-size: medium;
+  width: var(--post-card-width, 250px);
+  height: var(--post-card-height, auto);
+  padding: 3px;
+  margin: 5px 3px;
+  list-style: none;
+  border: var(--post-card-border);
+  border-radius: 5px;
+  background-color: var(--post-card-background-color);
+  border-right-style: double;
+  border-bottom-style: hidden;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+}
 
 .posts-container {
   padding: 5px 0 0 5px;
